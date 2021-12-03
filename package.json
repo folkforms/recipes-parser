@@ -7,7 +7,7 @@
   "author": "folkforms",
   "license": "MIT",
   "scripts": {
-    "start": "node cli/cli.js",
+    "cli": "node cli/cli.js",
     "release": "npm-release",
     "test": "yarn jest"
   },

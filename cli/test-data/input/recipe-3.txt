@@ -1,17 +1,14 @@
-# Irish Breakfast
+# Foo
 
-TAGS: tag2
+TAGS: tag3
 SHOPPING LIST: item 1, item 2
 FROM: https://www.google.com
 SERVES: 1
-TIME: 30 mins
+TIME: 90 minutes
 
 ## Ingredients
 
-3 slices bacon
-2 sausages
-1 egg
-2 tomatoes
+1 foo
 
 ## Directions
 
@@ -23,7 +20,4 @@ Any notes go here
 
 ## Leftovers
 
-- 3 slices bacon
-- 4 sausages
-- 5 eggs
-- 3 tomatoes
+- 1/2 foo

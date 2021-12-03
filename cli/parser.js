@@ -8,9 +8,9 @@ const parser = (inputFolder, outputFile) => {
 
   textFiles.forEach(textFile => {
     const p1 = textFileParser(textFile);
-    const p2 = metaDataParser(p1);
-    const fromJson = JSON.parse(p2.join(""));
-    allRecipes.push(fromJson);
+    const fromJson = JSON.parse(p1.join(""));
+    const p2 = metaDataParser(fromJson);
+    allRecipes.push(p2);
   });
 
   fileio.writeLines(outputFile, JSON.stringify(allRecipes));

@@ -6,9 +6,9 @@ const parseMetaData = obj => {
     if(line.startsWith("FROM: ")) {
       obj.metaData.from = line.substring(6);
     } else if(line.startsWith("SERVES: ")) {
-      obj.metaData.serves = line.substring(8);
+      obj.metaData.serves = line.substring(8); // FIXME Convert into number
     } else if(line.startsWith("TIME: ")) {
-      obj.metaData.time = line.substring(6);
+      obj.metaData.time = line.substring(6); // FIXME Parse time into raw minutes
     } else if(line.startsWith("TAGS: ")) {
       obj.metaData.tags = line.substring(6).split(", ");
     } else if(line.startsWith("SHOPPING LIST: ")) {

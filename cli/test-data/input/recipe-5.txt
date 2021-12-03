@@ -1,17 +1,14 @@
-# Irish Breakfast
+# Muk
 
-TAGS: tag2
+TAGS: tag1, tag5
 SHOPPING LIST: item 1, item 2
 FROM: https://www.google.com
 SERVES: 1
-TIME: 30 mins
+TIME: 1 hr
 
 ## Ingredients
 
-3 slices bacon
-2 sausages
-1 egg
-2 tomatoes
+1 muk
 
 ## Directions
 
@@ -23,7 +20,4 @@ Any notes go here
 
 ## Leftovers
 
-- 3 slices bacon
-- 4 sausages
-- 5 eggs
-- 3 tomatoes
+- 1/2 muk

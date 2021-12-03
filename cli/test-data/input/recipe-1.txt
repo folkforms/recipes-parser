@@ -1,6 +1,6 @@
 # Cake
 
-TAGS: tag1, tag2
+TAGS: tag1
 SHOPPING LIST: item 1, item 2
 FROM: https://www.google.com
 SERVES: 2
