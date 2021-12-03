@@ -17,6 +17,6 @@
     "markdown-to-x": "^0.0.15"
   },
   "devDependencies": {
-    "@folkforms/line-endings": "^0.0.10"
+    "@folkforms/line-endings": "^0.0.11"
   }
 }

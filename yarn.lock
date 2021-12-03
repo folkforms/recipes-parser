@@ -312,10 +312,10 @@
     shelljs "^0.8.4"
     untildify "^4.0.0"
 
-"@folkforms/line-endings@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@folkforms/line-endings/-/line-endings-0.0.10.tgz#e1ae0dd751f2d5d3ea3cb19d57b9fe75817638e6"
-  integrity sha512-L1OnZDgzefPPUeFOUW+lMecO5jrxLM+l8SHB2A7fEAd8DFmlxB3TRkuMSh8CQXQX0xGKOXDQoAWSGBNauIJQuw==
+"@folkforms/line-endings@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@folkforms/line-endings/-/line-endings-0.0.11.tgz#cd7448afb406f713a1470c39aefcb1bae9fce8fc"
+  integrity sha512-slB90UykBwbxqbxo8AKD+M3hgBML4bjas43M44zqcFisx04mI0tKnZCaDJBNCCnlms8jJfkbVebB4arKwQQnnQ==
   dependencies:
     "@folkforms/file-io" "^0.2.3"
     "@folkforms/npm-release" "^0.0.18"
