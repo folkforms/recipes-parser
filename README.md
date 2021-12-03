@@ -1,4 +1,4 @@
-# recipes-text-file-parser
+# recipes-parser
 
 Generates JSON files based on recipes and their metadata.
 
@@ -24,7 +24,7 @@ My typical recipe file looks like this:
 
     - Mix everything
     - Put it in a cake tin
-    - Cook at 180 for 1 hour
+    - Cook at 180 degrees for 1 hour
 
     ## Notes
 
@@ -36,7 +36,7 @@ My typical recipe file looks like this:
 
 ## Output
 
-The output is in JSON:
+The above file is parsed into JSON:
 
     {
       "recipe": "Cake",
@@ -54,10 +54,15 @@ The output is in JSON:
         "500g flour"
       ],
       "directions": [
-        "Bake a cake"
+        "- Mix everything"
+        "- Put it in a cake tin"
+        "- Cook at 180 degrees for 1 hour"
       ],
       "notes": "Any notes go here",
       "leftovers": [
         "1 egg"
+      ],
+      "fullText": [
+        "(full text of the recipe for searching etc.)"
       ]
     }
