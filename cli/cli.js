@@ -3,6 +3,6 @@
 const parser = require("./parser");
 
 const inputFolder = "cli/test-data/input";
-const outputFolder = "cli/test-data/output";
+const outputFile = "cli/test-data/output/recipes.json";
 
-parser(inputFolder, outputFolder);
+parser(inputFolder, outputFile);

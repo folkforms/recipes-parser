@@ -1,20 +1,21 @@
-# Cake
+# Irish Breakfast
 
 TAGS: tag1, tag2
 SHOPPING LIST: item 1, item 2
 FROM: https://www.google.com
-SERVES: 2
-TIME: 1 hour
+SERVES: 1
+TIME: 30 mins
 
 ## Ingredients
 
-1 kg sugar
-5 eggs
-500g flour
+3 slices bacon
+2 sausages
+1 egg
+2 tomatoes
 
 ## Directions
 
-- Bake a cake
+- Fry everything
 
 ## Notes
 
@@ -22,4 +23,7 @@ Any notes go here
 
 ## Leftovers
 
-- 1 egg
+- 3 slices bacon
+- 4 sausages
+- 5 eggs
+- 3 tomatoes
