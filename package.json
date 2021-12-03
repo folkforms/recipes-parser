@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Parses recipe files to JSON.",
   "main": "cli/cli.js",
-  "repository": "url",
+  "repository": "git@github.com:folkforms/recipes-parser.git",
   "author": "folkforms",
   "license": "MIT",
   "scripts": {
