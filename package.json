@@ -1,6 +1,6 @@
 {
   "name": "@folkforms/recipes-parser",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Parses recipe files to JSON.",
   "main": "cli/cli.js",
   "repository": "git@github.com:folkforms/recipes-parser.git",
