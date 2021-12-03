@@ -1,0 +1,7 @@
+- yarn test
+- yarn line-endings --check ** --line-ending LF
+- npm whoami
+- yarn install --production --force
+- npm version patch
+- npm publish --access=public
+- yarn install

@@ -1,0 +1,22 @@
+{
+  "recipe": "{{ recipeName }}",
+  "filename": "{{ @filename }}",
+  "metaDataUnparsed": [
+    "{{ metaData | join("\",\n\"") }}"
+  ],
+  "ingredients": [
+    "{{ ingredients | join("\",\n\"") }}"
+  ],
+  "directions": [
+    "{{ directions | join("\",\n\"") }}"
+  ],
+  "notes": [
+    "{{ notes | join("\",\n\"") }}"
+  ],
+  "leftovers": [
+    "{{ leftovers | join("\",\n\"") }}"
+  ],
+  "fullText": [
+    "{{ @contents | join("\",\n\"") }}"
+  ]
+}

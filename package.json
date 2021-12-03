@@ -1,0 +1,22 @@
+{
+  "name": "@folkforms/recipes-parser",
+  "version": "0.0.0",
+  "description": "Parses recipe files to JSON.",
+  "main": "cli/cli.js",
+  "repository": "url",
+  "author": "folkforms",
+  "license": "MIT",
+  "scripts": {
+    "start": "node cli/cli.js",
+    "release": "npm-release",
+    "test": "yarn jest"
+  },
+  "dependencies": {
+    "@folkforms/npm-release": "^0.0.24",
+    "jest": "^27.3.1",
+    "markdown-to-x": "^0.0.15"
+  },
+  "devDependencies": {
+    "@folkforms/line-endings": "^0.0.10"
+  }
+}

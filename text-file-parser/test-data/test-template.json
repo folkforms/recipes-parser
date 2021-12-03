@@ -1,0 +1,13 @@
+const fileio = require("@folkforms/file-io");
+const parseMetaData = require("./parseMetaData");
+
+describe("parseMetaData tests", () => {
+  it("parses the metadata correctly", () => {
+    const input = fileio.readJson("test_data/input-1.json");
+    const expected = fileio.readJson("test_data/output-1.json");
+
+    const actual = parseMetaData(input);
+
+    expect(actual).toEqual(expected);
+  });
+});

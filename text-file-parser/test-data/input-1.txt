@@ -1,0 +1,25 @@
+# Recipe 1
+
+TAGS: tag1, tag2
+SHOPPING LIST: item 1, item 2
+FROM: https://www.google.com
+SERVES: 2
+TIME: 1 hour
+
+## Ingredients
+
+1 kg sugar
+5 eggs
+500g flour
+
+## Directions
+
+- Bake a cake
+
+## Notes
+
+Any notes go here
+
+## Leftovers
+
+- 1 egg
