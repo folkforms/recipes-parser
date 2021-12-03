@@ -14,7 +14,9 @@
 "500g flour"
   ],
   "directions": [
-    "Bake a cake"
+    "Mix everything",
+"Put it in a cake tin",
+"Cook at 180 degrees for 1 hour"
   ],
   "notes": [
     "Any notes go here"
@@ -39,7 +41,9 @@
 "",
 "## Directions",
 "",
-"- Bake a cake",
+"- Mix everything",
+"- Put it in a cake tin",
+"- Cook at 180 degrees for 1 hour",
 "",
 "## Notes",
 "",
