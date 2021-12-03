@@ -1,5 +1,5 @@
 {
-  "recipe": "Recipe 1",
+  "name": "Recipe 1",
   "filename": "text-file-parser/test-data/input-1.txt",
   "metaDataUnparsed": [
     "TAGS: tag1, tag2",

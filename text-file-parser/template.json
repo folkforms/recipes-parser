@@ -1,5 +1,5 @@
 {
-  "recipe": "{{ recipeName }}",
+  "name": "{{ name }}",
   "filename": "{{ @filename }}",
   "metaDataUnparsed": [
     "{{ metaData | join("\",\n\"") }}"
