@@ -8,13 +8,16 @@
   "license": "MIT",
   "scripts": {
     "cli": "node cli/cli.js",
+    "cli-test": "node cli/cli.js --input cli/test-data/input --output cli/test-data/output/recipes.json -n",
     "release": "npm-release",
     "test": "yarn jest"
   },
   "dependencies": {
+    "@folkforms/file-io": "^0.2.7",
     "@folkforms/npm-release": "^0.0.24",
+    "commander": "^8.3.0",
     "jest": "^27.3.1",
-    "markdown-to-x": "^0.0.15"
+    "markdown-to-x": "^0.0.18"
   },
   "devDependencies": {
     "@folkforms/line-endings": "^0.0.11"

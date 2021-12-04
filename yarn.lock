@@ -312,6 +312,16 @@
     shelljs "^0.8.4"
     untildify "^4.0.0"
 
+"@folkforms/file-io@^0.2.7":
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/@folkforms/file-io/-/file-io-0.2.7.tgz#21bbd13c0aa3583e08f52d0daa82dd45c2ce843e"
+  integrity sha512-kqvjDoe0i1zDBMH+QJ+871DNbEKNqf4l+dpW3UxiPp41IW9QWLrF6jUR8QelPOAeJKz9itiIlJoJfsZkYdvOwg==
+  dependencies:
+    fast-glob "^3.2.5"
+    fs-extra "^9.1.0"
+    shelljs "^0.8.4"
+    untildify "^4.0.0"
+
 "@folkforms/line-endings@^0.0.11":
   version "0.0.11"
   resolved "https://registry.yarnpkg.com/@folkforms/line-endings/-/line-endings-0.0.11.tgz#cd7448afb406f713a1470c39aefcb1bae9fce8fc"
@@ -972,7 +982,7 @@ commander@^5.1.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-5.1.0.tgz#46abbd1652f8e059bddaef99bbdcb2ad9cf179ae"
   integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
 
-commander@^8.0.0:
+commander@^8.0.0, commander@^8.3.0:
   version "8.3.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-8.3.0.tgz#4837ea1b2da67b9c616a67afbb0fafee567bca66"
   integrity sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==
@@ -2043,10 +2053,10 @@ makeerror@1.0.12:
   dependencies:
     tmpl "1.0.5"
 
-markdown-to-x@^0.0.15:
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/markdown-to-x/-/markdown-to-x-0.0.15.tgz#470e979a216d7b3c9aa60ff61323e3cbf49d5840"
-  integrity sha512-nVPUncyocPYsTIw30/M1X6+aMDnYqsAQ3j48y7okySoKSwt7EUpUvbtdzRi2WiiENt2gzwQ98dOw7FuT4x38yA==
+markdown-to-x@^0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/markdown-to-x/-/markdown-to-x-0.0.18.tgz#e53f2ca689668d1cb3a9224a26518f6bbc0bf717"
+  integrity sha512-BVH7Xlja3j6aXLYVUoBr2RU2Jr3EUN3zkQv/pX5VayX6cEd22fGoqUGnGKt8ZGHMOz9W2xG1bc+pKXP6XUaeZg==
   dependencies:
     "@folkforms/file-io" "^0.2.1"
     glob "^7.1.7"
