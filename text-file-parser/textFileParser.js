@@ -8,7 +8,7 @@ const textFileParser = inputFilename => {
   const structure = fileio.readLines("text-file-parser/structure.md");
   const templateData = fileio.readLines("text-file-parser/template.json");
 
-  const outputData = m2x(inputData, structure, null, templateData, inputFilename);
+  const outputData = m2x(inputData, structure, null, templateData, inputFilename, { cleanLists: false });
   return outputData;
 }
 
