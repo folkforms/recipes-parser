@@ -3,7 +3,7 @@ const textFileParser = require("../text-file-parser/textFileParser");
 const metaDataParser = require("../meta-data-parser/metaDataParser");
 
 const allRecipes = [];
-const parser = (inputGlob, outputFile, dryRun) => {
+const parser = (inputGlob, outputFile, options) => {
   const textFiles = fileio.glob(inputGlob);
 
   textFiles.forEach(textFile => {
@@ -13,14 +13,16 @@ const parser = (inputGlob, outputFile, dryRun) => {
       const fromJson = JSON.parse(p2);
       const final = metaDataParser(fromJson);
       allRecipes.push(final);
-      console.info(`Successfully parsed ${textFile}`);
+      if(options.showSuccess) {
+        console.info(`Successfully parsed ${textFile}`);
+      }
     } catch(error) {
       console.error(`Error processing ${textFile}`);
       console.error(error);
     }
   });
 
-  if(!dryRun) {
+  if(!options.dryRun) {
     fileio.writeLines(outputFile, JSON.stringify(allRecipes));
   } else {
     console.info(`[DRY RUN] textFiles = ${JSON.stringify(textFiles)}`);
