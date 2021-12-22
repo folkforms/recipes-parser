@@ -11,6 +11,12 @@ const parser = (inputGlob, outputFile, options) => {
       const p1 = textFileParser(textFile);
       const p2 = p1.join("");
       const fromJson = JSON.parse(p2);
+
+      if(!fromJson.name) {
+        console.warn(`WARNING: Skipped recipe '${textFile}' with no title`);
+        return;
+      }
+
       const final = metaDataParser(fromJson);
       allRecipes.push(final);
       if(options.showSuccess) {
