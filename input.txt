@@ -1,5 +1,3 @@
 # All paths will be prefixed with "f:/documents/food/"
 
-_new_tried_2019/*.md
-_new_tried_2020/*.md
-_new_tried_2021/*.md
+**/*.md

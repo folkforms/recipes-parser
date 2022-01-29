@@ -32,6 +32,8 @@ const parser = (globs, outputFile, options) => {
     }
   });
 
+  printStats(textFiles.length);
+
   if(!options.dryRun) {
     fileio.writeLines(outputFile, JSON.stringify(allRecipes));
   } else {
@@ -39,6 +41,11 @@ const parser = (globs, outputFile, options) => {
     console.info(`[DRY RUN] allRecipes = ${JSON.stringify(allRecipes)}`);
     console.info(`[DRY RUN] outputFile = ${outputFile}`);
   }
+}
+
+const printStats = numProcessed => {
+  const totalFiles = [fileio.glob("f:/documents/food/**/*.txt"), fileio.glob("f:/documents/food/**/*.md")].flat().length;
+  console.info(`Processed ${numProcessed} of ${totalFiles} files (${(numProcessed/totalFiles*100).toFixed(0)}%)`);
 }
 
 module.exports = parser;
