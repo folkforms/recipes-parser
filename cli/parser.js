@@ -3,8 +3,12 @@ const textFileParser = require("../text-file-parser/textFileParser");
 const metaDataParser = require("../meta-data-parser/metaDataParser");
 
 const allRecipes = [];
-const parser = (inputGlob, outputFile, options) => {
-  const textFiles = fileio.glob(inputGlob);
+const parser = (globs, outputFile, options) => {
+  let textFiles = [];
+  globs.forEach(glob => {
+    textFiles.push(fileio.glob(glob));
+  });
+  textFiles = textFiles.flat();
 
   textFiles.forEach(textFile => {
     try {
