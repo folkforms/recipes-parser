@@ -1,3 +1,4 @@
 # All paths will be prefixed with "f:/documents/food/"
 
 **/*.md
+**/*.txt
