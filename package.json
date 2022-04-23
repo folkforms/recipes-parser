@@ -17,7 +17,8 @@
     "@folkforms/npm-release": "^0.0.24",
     "commander": "^8.3.0",
     "jest": "^27.3.1",
-    "markdown-to-x": "^0.0.18"
+    "markdown-to-x": "^0.0.18",
+    "parse-time-strings": "^0.0.2"
   },
   "devDependencies": {
     "@folkforms/line-endings": "^0.0.11"

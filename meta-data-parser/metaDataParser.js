@@ -1,4 +1,4 @@
-const parseTime = require('./parseTime');
+const parseTimeStrings = require('parse-time-strings');
 
 const parseMetaData = obj => {
   if(!obj.metaDataUnparsed) { return obj; }
@@ -21,7 +21,7 @@ const parseMetaData = obj => {
       obj.metaData.serves = Number(line.substring(7));
     } else if(line.startsWith("TIME: ")) {
       obj.metaData.time = line.substring(6);
-      obj.metaData.convertedTimeMinutes = parseTime(obj.metaData.time, obj.filename);
+      obj.metaData.convertedTimeMinutes = parseTimeStrings(obj.metaData.time, obj.filename);
     } else if(line.startsWith("TAGS: ")) {
       obj.metaData.tags = line.substring(6).split(", ");
     } else if(line.startsWith("SHOPPING LIST: ")) {
