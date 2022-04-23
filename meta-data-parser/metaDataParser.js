@@ -14,9 +14,9 @@ const parseMetaData = obj => {
     } else if(line.toLowerCase().startsWith("source: ")) {
       obj.metaData.from = line.substring(8); // FIXME Should I warn about using "SOURCE" here and suggest that it should be replaced with "FROM"?
     } else if(line.startsWith("SERVES: ")) {
-      obj.metaData.serves = line.substring(8); // FIXME Convert into number
+      obj.metaData.serves = Number(line.substring(8));
     } else if(line.startsWith("Serves ")) {
-      obj.metaData.serves = line.substring(7); // FIXME Convert into number
+      obj.metaData.serves = Number(line.substring(7));
     } else if(line.startsWith("TIME: ")) {
       obj.metaData.time = line.substring(6); // FIXME Parse time into raw minutes
     } else if(line.startsWith("TAGS: ")) {
