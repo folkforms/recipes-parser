@@ -1,3 +1,5 @@
+const parseTime = require('./parseTime');
+
 const parseMetaData = obj => {
   if(!obj.metaDataUnparsed) { return obj; }
 
@@ -18,7 +20,8 @@ const parseMetaData = obj => {
     } else if(line.startsWith("Serves ")) {
       obj.metaData.serves = Number(line.substring(7));
     } else if(line.startsWith("TIME: ")) {
-      obj.metaData.time = line.substring(6); // FIXME Parse time into raw minutes
+      obj.metaData.time = line.substring(6);
+      obj.metaData.convertedTimeMinutes = parseTime(obj.metaData.time, obj.filename);
     } else if(line.startsWith("TAGS: ")) {
       obj.metaData.tags = line.substring(6).split(", ");
     } else if(line.startsWith("SHOPPING LIST: ")) {
