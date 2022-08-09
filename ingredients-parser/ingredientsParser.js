@@ -5,9 +5,17 @@ const parseIngredients = obj => {
   if(!obj.ingredients) { return obj; }
   obj.ingredientsParsed = [];
   obj.ingredients.forEach(item => {
+
+    if(item.startsWith("- ") || item.startsWith("* ")) {
+      item = item.substring(2);
+    }
+
+    let hasFoodDotJsonEntry = false;
+    let hasUnit = false;
     let parsedIngredient = null;
     for(let i = 0; i < foods.length; i++) {
-      if(item.indexOf(foods[i]) !== -1) {
+      if(item.toLowerCase().indexOf(foods[i]) !== -1) {
+        hasFoodDotJsonEntry = true;
         // Name
         parsedIngredient = { name: foods[i] };
 
@@ -16,6 +24,10 @@ const parseIngredients = obj => {
         const match = regexp.exec(item);
         if(match && match.length > 1) {
           parsedIngredient.count = match[1];
+        } else {
+          console.warn(`No count for ingredient ${item} in recipe ${obj.filename}`);
+          parsedIngredient = null;
+          continue;
         }
 
         // Count for "1/2 tsp"
@@ -33,10 +45,11 @@ const parseIngredients = obj => {
         }
 
         // Type
-        const regexpUnit = new RegExp("[\\d+|\\d/\\d|\\d\\.\\d]\\s?(kg|g|tsp|dsp|Tbsp|ml)", "g");
+        const regexpUnit = new RegExp("^(\\d+|\\d\/\\d|\\d\\.\\d+)\\s?(kg|g|tsp|dsp|rounded dsp|Tbsp|tbsp|tablespoons|ml|small tin|tin|slices)");
         const matchUnit = regexpUnit.exec(item);
-        if(matchUnit && matchUnit.length > 1) {
-          parsedIngredient.unit = matchUnit[1];
+        if(matchUnit && matchUnit.length > 2) {
+          hasUnit = true;
+          parsedIngredient.unit = matchUnit[2];
         } else {
           parsedIngredient.unit = null;
         }
@@ -57,18 +70,39 @@ const parseIngredients = obj => {
             parsedIngredient.count = String(parsedIngredient.count * 1000);
           } else if(parsedIngredient.unit === "ml") {
             parsedIngredient.unit = "g";
+          } else if(parsedIngredient.unit === "small tin") {
+            parsedIngredient.unit = "g";
+            parsedIngredient.count = String(parsedIngredient.count * 200);
+          } else if(parsedIngredient.unit === "tin") {
+            parsedIngredient.unit = "g";
+            parsedIngredient.count = String(parsedIngredient.count * 400);
           } else if(parsedIngredient.unit === "tsp") {
             parsedIngredient.unit = "g";
             parsedIngredient.count = String(parsedIngredient.count * 5);
-          } else if(parsedIngredient.unit === "dsp") {
+          } else if(parsedIngredient.unit === "dsp" || parsedIngredient.unit === "rounded dsp") {
             parsedIngredient.unit = "g";
             parsedIngredient.count = String(parsedIngredient.count * 10);
-          } else if(parsedIngredient.unit === "Tbsp") {
+          } else if(parsedIngredient.unit === "Tbsp" || parsedIngredient.unit === "tbsp" || parsedIngredient.unit === "tablespoons") {
             parsedIngredient.unit = "g";
             parsedIngredient.count = String(parsedIngredient.count * 15);
+          } else if(parsedIngredient.name === "bacon" && parsedIngredient.unit === "slices") {
+            parsedIngredient.unit = "g";
+            parsedIngredient.count = String(parsedIngredient.count * 40);
+          } else if(parsedIngredient.name === "parma ham" && parsedIngredient.unit === "slices") {
+            parsedIngredient.unit = "g";
+            parsedIngredient.count = String(parsedIngredient.count * 21);
+          } else if(parsedIngredient.name === "egg" && parsedIngredient.unit === null) {
+            parsedIngredient.unit = "g";
+            parsedIngredient.count = String(parsedIngredient.count * 48);
           } else {
             throw new Error(`Could not parse count = ${parsedIngredient.count} and unit = ${parsedIngredient.unit} for ${JSON.stringify(item)}`);
           }
+        }
+
+        // Special cases
+        if(parsedIngredient.name === "tomato" && parsedIngredient.unit === null) {
+          parsedIngredient.unit = "g";
+          parsedIngredient.count = parsedIngredient.count * 82; // One tomato weighs around 82g
         }
 
         break;
@@ -76,9 +110,18 @@ const parseIngredients = obj => {
     }
     if(parsedIngredient) {
       obj.ingredientsParsed.push(parsedIngredient);
+    } else {
+      if(!hasFoodDotJsonEntry) {
+        console.warn(`No food.json entry found for ingredient '${item}' in ${obj.filename}`);
+      } else if(!hasUnit) {
+        console.warn(`No unit found for ingredient '${item}' in ${obj.filename}`);
+      }
     }
   });
-  obj.calories = calculateCalories(obj.ingredientsParsed);
+  obj.calories = calculateCalories(obj.ingredientsParsed, obj);
+  if(obj.metaData.serves) {
+    obj.caloriesPerServing = obj.calories / obj.metaData.serves;
+  }
   return obj;
 }
 

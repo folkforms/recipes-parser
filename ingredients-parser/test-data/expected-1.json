@@ -25,6 +25,7 @@
     { "count": "7.5", "unit": "g", "name": "tomato puree" }
   ],
   "calories": 6930.8,
+  "caloriesPerServing": 3465.4,
   "directions": [
     "Mix everything",
     "Put it in a cake tin",
