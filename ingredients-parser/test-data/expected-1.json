@@ -17,13 +17,14 @@
     "1/2 Tbsp tomato puree"
   ],
   "ingredientsParsed": [
-    { "count": "1000", "type": "g", "ingredient": "sugar" },
-    { "count": "5", "type": null, "ingredient": "egg" },
-    { "count": "500", "type": "g", "ingredient": "flour" },
-    { "count": "100", "type": "g", "ingredient": "olive oil" },
-    { "count": "2.5", "type": "g", "ingredient": "cayenne pepper" },
-    { "count": "7.5", "type": "g", "ingredient": "tomato puree" }
+    { "count": "1000", "unit": "g", "name": "sugar" },
+    { "count": "5", "unit": null, "name": "egg" },
+    { "count": "500", "unit": "g", "name": "flour" },
+    { "count": "100", "unit": "g", "name": "olive oil" },
+    { "count": "2.5", "unit": "g", "name": "cayenne pepper" },
+    { "count": "7.5", "unit": "g", "name": "tomato puree" }
   ],
+  "calories": 6930.8,
   "directions": [
     "Mix everything",
     "Put it in a cake tin",

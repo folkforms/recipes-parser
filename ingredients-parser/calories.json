@@ -1,9 +1,10 @@
 [
-  { "type": "egg" },
-  { "type": "tomato" },
-  { "type": "flour" },
-  { "type": "bacon" },
-  { "type": "sugar" },
-  { "type": "olive oil" },
-  { "type": "cayenne pepper" }
+  { "name": "egg", "calories": 66, "superUnit": null, "source": "internet" },
+  { "name": "tomato puree", "calories": 38, "superUnit": "100g", "source": "internet" },
+  { "name": "tomato", "calories": 18, "superUnit": "100g", "source": "internet" },
+  { "name": "flour", "calories": 364, "superUnit": "100g", "source": "internet" },
+  { "name": "bacon", "calories": 541, "superUnit": "100g", "source": "internet" },
+  { "name": "sugar", "calories": 387, "superUnit": "100g", "source": "internet" },
+  { "name": "olive oil", "calories": 900, "superUnit": "100g", "source": "internet" },
+  { "name": "cayenne pepper", "calories": 318, "superUnit": "100g", "source": "internet" }
 ]

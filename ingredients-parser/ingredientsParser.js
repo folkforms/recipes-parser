@@ -1,14 +1,15 @@
 const foods = require("./foods");
+const calculateCalories = require("./calculateCalories");
 
-const parseMetaData = obj => {
+const parseIngredients = obj => {
   if(!obj.ingredients) { return obj; }
   obj.ingredientsParsed = [];
   obj.ingredients.forEach(item => {
     let parsedIngredient = null;
     for(let i = 0; i < foods.length; i++) {
       if(item.indexOf(foods[i]) !== -1) {
-        // Ingredient
-        parsedIngredient = { ingredient: foods[i] };
+        // Name
+        parsedIngredient = { name: foods[i] };
 
         // Count
         const regexp = new RegExp("(\\d+)\\s?.*", "g");
@@ -32,12 +33,12 @@ const parseMetaData = obj => {
         }
 
         // Type
-        const regexpType = new RegExp("[\\d+|\\d/\\d|\\d\\.\\d]\\s?(kg|g|tsp|dsp|Tbsp|ml)", "g");
-        const matchType = regexpType.exec(item);
-        if(matchType && matchType.length > 1) {
-          parsedIngredient.type = matchType[1];
+        const regexpUnit = new RegExp("[\\d+|\\d/\\d|\\d\\.\\d]\\s?(kg|g|tsp|dsp|Tbsp|ml)", "g");
+        const matchUnit = regexpUnit.exec(item);
+        if(matchUnit && matchUnit.length > 1) {
+          parsedIngredient.unit = matchUnit[1];
         } else {
-          parsedIngredient.type = null;
+          parsedIngredient.unit = null;
         }
 
         // Convert count from fractions to decimal
@@ -48,25 +49,25 @@ const parseMetaData = obj => {
         }
 
         // Convert count and type from natural language "0.5 tsp" to standard term "2.5 g"
-        if(parsedIngredient.count && parsedIngredient.type) {
-          if(parsedIngredient.type === "g") {
+        if(parsedIngredient.count && parsedIngredient.unit) {
+          if(parsedIngredient.unit === "g") {
             // Do nothing
-          } else if(parsedIngredient.type === "kg") {
-            parsedIngredient.type = "g";
+          } else if(parsedIngredient.unit === "kg") {
+            parsedIngredient.unit = "g";
             parsedIngredient.count = String(parsedIngredient.count * 1000);
-          } else if(parsedIngredient.type === "ml") {
-            parsedIngredient.type = "g";
-          } else if(parsedIngredient.type === "tsp") {
-            parsedIngredient.type = "g";
+          } else if(parsedIngredient.unit === "ml") {
+            parsedIngredient.unit = "g";
+          } else if(parsedIngredient.unit === "tsp") {
+            parsedIngredient.unit = "g";
             parsedIngredient.count = String(parsedIngredient.count * 5);
-          } else if(parsedIngredient.type === "dsp") {
-            parsedIngredient.type = "g";
+          } else if(parsedIngredient.unit === "dsp") {
+            parsedIngredient.unit = "g";
             parsedIngredient.count = String(parsedIngredient.count * 10);
-          } else if(parsedIngredient.type === "Tbsp") {
-            parsedIngredient.type = "g";
+          } else if(parsedIngredient.unit === "Tbsp") {
+            parsedIngredient.unit = "g";
             parsedIngredient.count = String(parsedIngredient.count * 15);
           } else {
-            throw new Error(`Could not parse count = ${parsedIngredient.count} and type = ${parsedIngredient.type} for ${JSON.stringify(item)}`);
+            throw new Error(`Could not parse count = ${parsedIngredient.count} and unit = ${parsedIngredient.unit} for ${JSON.stringify(item)}`);
           }
         }
 
@@ -77,7 +78,8 @@ const parseMetaData = obj => {
       obj.ingredientsParsed.push(parsedIngredient);
     }
   });
+  obj.calories = calculateCalories(obj.ingredientsParsed);
   return obj;
 }
 
-module.exports = parseMetaData;
+module.exports = parseIngredients;
