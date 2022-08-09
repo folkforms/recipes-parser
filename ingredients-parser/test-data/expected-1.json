@@ -1,0 +1,36 @@
+{
+  "recipe": "Recipe 1",
+  "filename": "meta-data-parser/test-data/input-1.txt",
+  "metaData": {
+    "tags": [ "tag1", "tag2" ],
+    "shoppingList": [ "item 1", "item 2" ],
+    "from": "https://www.google.com",
+    "serves": "2",
+    "time": "1 hour"
+  },
+  "ingredients": [
+    "1 kg sugar",
+    "5 eggs",
+    "500g flour",
+    "100ml olive oil",
+    "0.5 tsp cayenne pepper",
+    "1/2 Tbsp tomato puree"
+  ],
+  "ingredientsParsed": [
+    { "count": "1000", "type": "g", "ingredient": "sugar" },
+    { "count": "5", "type": null, "ingredient": "egg" },
+    { "count": "500", "type": "g", "ingredient": "flour" },
+    { "count": "100", "type": "g", "ingredient": "olive oil" },
+    { "count": "2.5", "type": "g", "ingredient": "cayenne pepper" },
+    { "count": "7.5", "type": "g", "ingredient": "tomato puree" }
+  ],
+  "directions": [
+    "Mix everything",
+    "Put it in a cake tin",
+    "Cook at 180 degrees for 1 hour"
+  ],
+  "notes": "Any notes go here",
+  "leftovers": [
+    "1 egg"
+  ]
+}

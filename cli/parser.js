@@ -1,6 +1,7 @@
 const fileio = require("@folkforms/file-io");
 const textFileParser = require("../text-file-parser/textFileParser");
 const metaDataParser = require("../meta-data-parser/metaDataParser");
+const ingredientsParser = require("../ingredients-parser/ingredientsParser");
 
 const allRecipes = [];
 const parser = (globs, outputFile, options) => {
@@ -21,8 +22,9 @@ const parser = (globs, outputFile, options) => {
         return;
       }
 
-      const final = metaDataParser(fromJson);
-      allRecipes.push(final);
+      const part2 = metaDataParser(fromJson);
+      const part3 = ingredientsParser(part2);
+      allRecipes.push(part3);
       if(options.showSuccess) {
         console.info(`Successfully parsed ${textFile}`);
       }
