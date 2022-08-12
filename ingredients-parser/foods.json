@@ -2,7 +2,7 @@
   "misc": [
     { "name": "foo" },
     { "name": "water", "caloriesPer100g": 0, "costPer100g": 0 },
-    { "name": "egg", "caloriesPer100g": 175, "costPer100g": -1 },
+    { "name": "egg", "caloriesPer100g": 175, "costPer100g": -1, "weightOfOneItem": 48 },
     { "name": "beef stock cube" },
     { "name": "beef stock" },
     { "name": "chicken stock" },
@@ -64,7 +64,7 @@
     { "name": "sundried tomatoes" },
     { "name": "tomato puree", "caloriesPer100g": 84, "costPer100g": -1, "caloriesSource": "label" },
     { "name": "chopped tomatoes", "caloriesPer100g": -1, "costPer100g": -1 },
-    { "name": "tomato", "caloriesPer100g": 18, "costPer100g": -1 },
+    { "name": "tomato", "caloriesPer100g": 18, "costPer100g": -1, "weightOfOneItem": 82 },
     { "name": "onion", "caloriesPer100g": -1, "costPer100g": -1 },
     { "name": "spinach" },
     { "name": "artichoke" },

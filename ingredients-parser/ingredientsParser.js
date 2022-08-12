@@ -65,7 +65,15 @@ const parseIngredients = obj => {
 
         // Convert count and type from natural language "0.5 tsp" to standard term "2.5 g"
         if(parsedIngredient.count) {
-          if(parsedIngredient.unit === "g") {
+          if(parsedIngredient.unit === null) {
+            const data = foodUtils.getData(parsedIngredient);
+            if(data && data.weightOfOneItem) {
+              parsedIngredient.unit = "g";
+              parsedIngredient.count = String(parsedIngredient.count * data.weightOfOneItem);
+            } else {
+              throw new Error(`(1) Could not parse count = ${parsedIngredient.count} and unit = ${parsedIngredient.unit} for ${JSON.stringify(parsedIngredient)}`);
+            }
+          } else if(parsedIngredient.unit === "g") {
             // Do nothing
           } else if(parsedIngredient.unit === "kg") {
             parsedIngredient.unit = "g";
@@ -93,14 +101,8 @@ const parseIngredients = obj => {
           } else if(parsedIngredient.name === "parma ham" && parsedIngredient.unit === "slices") {
             parsedIngredient.unit = "g";
             parsedIngredient.count = String(parsedIngredient.count * 21);
-          } else if(parsedIngredient.name === "egg" && parsedIngredient.unit === null) {
-            parsedIngredient.unit = "g";
-            parsedIngredient.count = String(parsedIngredient.count * 48);
-          } else if(parsedIngredient.name === "tomato" && parsedIngredient.unit === null) {
-            parsedIngredient.unit = "g";
-            parsedIngredient.count = String(parsedIngredient.count * 82);
           } else {
-            throw new Error(`Could not parse count = ${parsedIngredient.count} and unit = ${parsedIngredient.unit} for ${JSON.stringify(item)}`);
+            throw new Error(`(2) Could not parse count = ${parsedIngredient.count} and unit = ${parsedIngredient.unit} for ${JSON.stringify(item)}`);
           }
         }
 
