@@ -1,4 +1,4 @@
-const foods = require("./foods");
+const foodUtils = require("./foodUtils");
 const calculateCalories = require("./calculateCalories");
 
 const parseIngredients = obj => {
@@ -10,14 +10,16 @@ const parseIngredients = obj => {
       item = item.substring(2);
     }
 
+    const foodNames = foodUtils.listNames();
+
     let hasFoodDotJsonEntry = false;
     let hasUnit = false;
     let parsedIngredient = null;
-    for(let i = 0; i < foods.length; i++) {
-      if(item.toLowerCase().indexOf(foods[i]) !== -1) {
+    for(let i = 0; i < foodNames.length; i++) {
+      if(item.toLowerCase().indexOf(foodNames[i]) !== -1) {
         hasFoodDotJsonEntry = true;
         // Name
-        parsedIngredient = { name: foods[i] };
+        parsedIngredient = { name: foodNames[i] };
 
         // Count
         const regexp = new RegExp("(\\d+)\\s?.*", "g");
@@ -62,7 +64,7 @@ const parseIngredients = obj => {
         }
 
         // Convert count and type from natural language "0.5 tsp" to standard term "2.5 g"
-        if(parsedIngredient.count && parsedIngredient.unit) {
+        if(parsedIngredient.count) {
           if(parsedIngredient.unit === "g") {
             // Do nothing
           } else if(parsedIngredient.unit === "kg") {
@@ -94,6 +96,9 @@ const parseIngredients = obj => {
           } else if(parsedIngredient.name === "egg" && parsedIngredient.unit === null) {
             parsedIngredient.unit = "g";
             parsedIngredient.count = String(parsedIngredient.count * 48);
+          } else if(parsedIngredient.name === "tomato" && parsedIngredient.unit === null) {
+            parsedIngredient.unit = "g";
+            parsedIngredient.count = String(parsedIngredient.count * 82);
           } else {
             throw new Error(`Could not parse count = ${parsedIngredient.count} and unit = ${parsedIngredient.unit} for ${JSON.stringify(item)}`);
           }

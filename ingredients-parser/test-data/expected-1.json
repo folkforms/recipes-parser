@@ -11,6 +11,7 @@
   "ingredients": [
     "1 kg sugar",
     "5 eggs",
+    "2 tomatoes",
     "500g flour",
     "100ml olive oil",
     "0.5 tsp cayenne pepper",
@@ -18,14 +19,15 @@
   ],
   "ingredientsParsed": [
     { "count": "1000", "unit": "g", "name": "sugar" },
-    { "count": "5", "unit": null, "name": "egg" },
+    { "count": "240", "unit": "g", "name": "egg" },
+    { "count": "164", "unit": "g", "name": "tomato" },
     { "count": "500", "unit": "g", "name": "flour" },
     { "count": "100", "unit": "g", "name": "olive oil" },
     { "count": "2.5", "unit": "g", "name": "cayenne pepper" },
     { "count": "7.5", "unit": "g", "name": "tomato puree" }
   ],
-  "calories": 6930.8,
-  "caloriesPerServing": 3465.4,
+  "calories": 7053.77,
+  "caloriesPerServing": 3526.885,
   "directions": [
     "Mix everything",
     "Put it in a cake tin",
