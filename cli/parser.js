@@ -34,6 +34,9 @@ const parser = (globs, outputFile, options) => {
     }
   });
 
+  const foodUtils = require("../ingredients-parser/foodUtils");
+  foodUtils.validate();
+
   printStats(textFiles.length);
 
   if(!options.dryRun) {

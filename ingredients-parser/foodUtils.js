@@ -1,5 +1,32 @@
 const foodsJson = require("./foods");
 
+const validate = () => {
+  console.log(`Validating foods.json:`);
+  const data = _listData();
+  let errors = false;
+  for(let i = 0; i < data.length; i++) {
+    if(data[i].specificUnits && !data[i].weightOfOneItem) {
+      errors = true;
+      console.log(`Validation error: ${JSON.stringify(data[i])} has specificUnits but no weightOfOneItem`);
+    }
+  }
+  if(!errors) {
+    console.log("Validation ok");
+  }
+}
+
+const _listData = () => {
+  const data = [];
+  const categories = Object.keys(foodsJson);
+  for(let i = 0; i < categories.length; i++) {
+    const itemsInCategory = foodsJson[categories[i]];
+    for(let j = 0; j < itemsInCategory.length; j++) {
+      data.push(itemsInCategory[j]);
+    }
+  };
+  return data;
+}
+
 const listNames = overrideForTesting => {
   const data = overrideForTesting ? overrideForTesting : foodsJson;
   const names = [];
@@ -34,4 +61,4 @@ const getData = (ingredient, overrideForTesting) => {
   return null;
 }
 
-module.exports = { listNames, getData };
+module.exports = { validate, listNames, getData };
