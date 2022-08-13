@@ -1,0 +1,12 @@
+[
+  { "unit": "g", "multiplier": 1 },
+  { "unit": "kg", "multiplier": 1000 },
+  { "unit": "ml", "multiplier": 1 },
+  { "unit": "small tin", "multiplier": 200 },
+  { "unit": "tin", "multiplier": 400 },
+  { "unit": "tsp", "multiplier": 5 },
+  { "unit": "dsp", "multiplier": 10 },
+  { "unit": "Tbsp", "multiplier": 15 },
+  { "unit": "tbsp", "multiplier": 15 },
+  { "unit": "tablespoon", "multiplier": 15 }
+]
