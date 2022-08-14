@@ -1,6 +1,7 @@
 const foodUtils = require("./foodUtils");
 
 const calculateCalories = (ingredients, obj) => {
+  let missingValues = false;
   let total = 0;
   ingredients.forEach(ingredient => {
     const calorieData = foodUtils.getData(ingredient);
@@ -13,14 +14,17 @@ const calculateCalories = (ingredients, obj) => {
 
     if(ingredient.unit === "g") {
       const calories = ingredient.count / 100 * calorieData.caloriesPer100g
-      //console.log(`# calories for ${ingredient.name} = ${ingredient.count} / 100 * ${calorieData.calories} = ${calories}`);
-      total += calories;
+      if(calorieData.caloriesPer100g !== undefined) {
+        total += calories;
+      } else {
+        console.warn(`Missing caloriesPer100g for '${ingredient.name}' in foods.json (ingredient = ${JSON.stringify(ingredient)})`);
+        missingValues = true;
+      }
     } else {
       throw new Error(`Unknown combination found when calculating calories: ingredient = ${JSON.stringify(ingredient)}, calorieData = ${JSON.stringify(calorieData)}, filename = ${obj.filename}`);
     }
   });
-
-  return total;
+  return missingValues ? "MISSING_DATA" : total;
 }
 
 module.exports = calculateCalories;
