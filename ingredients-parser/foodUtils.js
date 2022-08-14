@@ -53,7 +53,7 @@ const getData = (ingredient, overrideForTesting) => {
   for(let i = 0; i < categories.length; i++) {
     const itemsInCategory = data[categories[i]];
     for(let j = 0; j < itemsInCategory.length; j++) {
-      if(itemsInCategory[j].name === ingredient.name) {
+      if(itemsInCategory[j].name.toLowerCase() === ingredient.name.toLowerCase()) {
         return itemsInCategory[j];
       }
     }
