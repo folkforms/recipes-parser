@@ -34,9 +34,15 @@ const parseIngredients = obj => {
         if(match && match.length > 1) {
           parsedIngredient.count = match[1];
         } else {
-          console.warn(`No count for ingredient ${item} in recipe ${obj.filename}`);
-          parsedIngredient = null;
-          continue;
+          if(parsedIngredient.name === "salt" && !parsedIngredient.count) {
+            parsedIngredient.count = "0.25";
+            parsedIngredient.unit = "tsp"
+          } else if(parsedIngredient.name === "pepper" && !parsedIngredient.count) {
+            parsedIngredient.count = "0.5";
+            parsedIngredient.unit = "tsp"
+          } else {
+            parsedIngredient.count = 1;
+          }
         }
 
         // Count for "1/2 tsp"
@@ -54,13 +60,15 @@ const parseIngredients = obj => {
         }
 
         // Type
-        const regexpUnit = new RegExp("^(\\d+|\\d\/\\d|\\d\\.\\d+)\\s?(kg|g|tsp|dsp|rounded dsp|Tbsp|tbsp|tablespoons|ml|small tin|tin|clove|slices)");
-        const matchUnit = regexpUnit.exec(item);
-        if(matchUnit && matchUnit.length > 2) {
-          hasUnit = true;
-          parsedIngredient.unit = matchUnit[2];
-        } else {
-          parsedIngredient.unit = null;
+        if(!parsedIngredient.unit) {
+          const regexpUnit = new RegExp("^(\\d+|\\d\/\\d|\\d\\.\\d+)\\s?(kg|g|tsp|dsp|rounded dsp|Tbsp|tbsp|tablespoons|ml|small tin|tin|clove|slices)");
+          const matchUnit = regexpUnit.exec(item);
+          if(matchUnit && matchUnit.length > 2) {
+            hasUnit = true;
+            parsedIngredient.unit = matchUnit[2];
+          } else {
+            parsedIngredient.unit = null;
+          }
         }
 
         // Convert count from fractions to decimal
@@ -114,7 +122,9 @@ const parseIngredients = obj => {
   });
   if(obj.metaData.serves) {
     obj.calories = calculateCalories(obj.ingredientsParsed, obj);
-    obj.caloriesPerServing = obj.calories / obj.metaData.serves;
+    if(typeof obj.calories === "number") {
+      obj.caloriesPerServing = obj.calories / obj.metaData.serves;
+    }
   }
   return obj;
 }
