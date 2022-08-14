@@ -9,12 +9,10 @@ const calculateCalories = (ingredients, obj) => {
       console.warn(`No calorie data for ingredient ${JSON.stringify(ingredient)} in ${obj.filename}`);
       return 0;
     }
-    // console.log(`# calorieData = ${JSON.stringify(calorieData)}`);
-    // console.log(`# ingredient = ${JSON.stringify(ingredient)}`);
-
     if(ingredient.unit === "g") {
       const calories = ingredient.count / 100 * calorieData.caloriesPer100g
       if(calorieData.caloriesPer100g !== undefined) {
+        ingredient.calories = calories;
         total += calories;
       } else {
         console.warn(`Missing caloriesPer100g for '${ingredient.name}' in foods.json (ingredient = ${JSON.stringify(ingredient)})`);
