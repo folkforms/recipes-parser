@@ -6,6 +6,12 @@ const parseIngredients = obj => {
   if(!obj.ingredients) { return obj; }
   obj.ingredientsParsed = [];
   obj.ingredients.forEach(item => {
+    if(item.length === 0) {
+      return;
+    }
+    if(item.endsWith(":")) {
+      return;
+    }
 
     if(item.startsWith("- ") || item.startsWith("* ")) {
       item = item.substring(2);
@@ -100,7 +106,7 @@ const parseIngredients = obj => {
       obj.ingredientsParsed.push(parsedIngredient);
     } else {
       if(!hasFoodDotJsonEntry) {
-        console.warn(`No food.json entry found for ingredient '${item}' in ${obj.filename}`);
+        console.warn(`No foods.json entry found for ingredient '${item}' in ${obj.filename}`);
       } else if(!hasUnit) {
         console.warn(`No unit found for ingredient '${item}' in ${obj.filename}`);
       }
