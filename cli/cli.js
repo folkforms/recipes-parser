@@ -11,6 +11,7 @@ program
   .option('-f, --file <input glob file>', 'input glob file')
   .requiredOption('-o, --output <output file>', 'output file')
   .option('-s, --show-success', 'verbose logging of successful files')
+  .option('--no-calories', 'skip calorie calculations')
   .option('-n, --dry-run', 'show the commands that would be run, without actually running anything')
   .option('-d, --debug', 'debug mode')
   .parse(process.argv);
@@ -27,6 +28,7 @@ const options = {
   showSuccess: program.opts().showSuccess,
   dryRun: program.opts().dryRun,
   debug: program.opts().debug,
+  calories: program.opts().calories,
 }
 
 const r = parser(globs, outputFile, options);

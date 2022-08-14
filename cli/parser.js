@@ -25,7 +25,7 @@ const parser = (globs, outputFile, options) => {
       }
 
       const part2 = metaDataParser(fromJson);
-      const part3 = ingredientsParser(part2);
+      const part3 = options.calories ? ingredientsParser(part2) : part2;
       allRecipes.push(part3);
       if(options.showSuccess) {
         console.info(`Successfully parsed ${textFile}`);
