@@ -8,10 +8,11 @@ const readGlobsFile = require("./readGlobsFile");
 // Parse command-line args
 program
   .option('-i, --input <input glob>', 'input glob')
-  .option('-f, --file <input file>', 'input file')
+  .option('-f, --file <input glob file>', 'input glob file')
   .requiredOption('-o, --output <output file>', 'output file')
   .option('-s, --show-success', 'verbose logging of successful files')
   .option('-n, --dry-run', 'show the commands that would be run, without actually running anything')
+  .option('-d, --debug', 'debug mode')
   .parse(process.argv);
 
 if(!program.opts().input && !program.opts().file) {
@@ -25,6 +26,7 @@ const outputFile = program.opts().output.replace(/\\/g, '/');
 const options = {
   showSuccess: program.opts().showSuccess,
   dryRun: program.opts().dryRun,
+  debug: program.opts().debug,
 }
 
 const r = parser(globs, outputFile, options);

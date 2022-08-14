@@ -1,10 +1,12 @@
 const fileio = require("@folkforms/file-io");
+const debug = require("./debug");
 const textFileParser = require("../text-file-parser/textFileParser");
 const metaDataParser = require("../meta-data-parser/metaDataParser");
 const ingredientsParser = require("../ingredients-parser/ingredientsParser");
 
 const allRecipes = [];
 const parser = (globs, outputFile, options) => {
+  debug(options.debug, `globs = ${globs}, outputFile = ${outputFile}, options = ${JSON.stringify(options)}`);
   let textFiles = [];
   globs.forEach(glob => {
     textFiles.push(fileio.glob(glob));
