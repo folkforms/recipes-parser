@@ -1,6 +1,6 @@
 {
   "misc": [
-    { "name": "foo" },
+    { "name": "foo", "caloriesPer100g": 0, "costPer100g": 0 },
     { "name": "water", "caloriesPer100g": 0, "costPer100g": 0 },
     { "name": "egg", "caloriesPer100g": 175, "weightOfOneItem": 48 },
     { "name": "beef stock cube" },
@@ -44,8 +44,10 @@
   ],
   "pasta": [
     { "name": "spaghetti" },
+    { "name": "penne" },
+    { "name": "rigatoni" },
     { "name": "capellini" },
-    { "name": "ziti pasta" }
+    { "name": "ziti" }
   ],
   "pastry": [
     { "name": "filo pastry" },
@@ -55,9 +57,15 @@
   "fruit": [
     { "name": "lime juice" },
     { "name": "lime" },
-    { "name": "lemon juice" },
+    { "name": "juice of half a lemon", "caloriesPer100g": 22, "weightOfOneItem": 34 },
+    { "name": "lemon juice", "caloriesPer100g": 22 },
     { "name": "lemon" },
-    { "name": "orange" }
+    { "name": "orange" },
+    { "name": "raisins" },
+    { "name": "sultanas", "caloriesPer100g": 301, "caloriesSource": "label" }
+  ],
+  "nuts": [
+    { "name": "sliced almonds", "caloriesPer100g": 629 }
   ],
   "vegetables": [
     { "name": "cherry tomatoes" },
@@ -65,9 +73,10 @@
     { "name": "tomato puree", "caloriesPer100g": 84, "caloriesSource": "label" },
     { "name": "chopped tomatoes" },
     { "name": "tomato", "caloriesPer100g": 18, "weightOfOneItem": 82 },
-    { "name": "onion" },
+    { "name": "onion", "caloriesPer100g": 40, "weightOfOneItem": 120 },
     { "name": "spinach" },
     { "name": "artichoke" },
+    { "name": "aubergine", "caloriesPer100g": 25, "weightOfOneItem": 400 },
     { "name": "courgette" },
     { "name": "asparagus" },
     { "name": "chilli" },
@@ -127,7 +136,9 @@
     { "name": "thyme" },
     { "name": "dried oregano" },
     { "name": "rosemary" },
-    { "name": "sage" }
+    { "name": "sage" },
+    { "name": "coriander leaves", "caloriesPer100g": 31 },
+    { "name": "mint", "caloriesPer100g": 70 }
   ],
   "spices": [
     { "name": "chilli powder" },
@@ -180,11 +191,12 @@
     { "name": "udon noodles" },
     { "name": "yellow noodles" },
     { "name": "basmati rice" },
-    { "name": "rice" }
+    { "name": "rice" },
+    { "name": "bulgur wheat", "caloriesPer100g": 101, "caloriesSource": "label" }
   ],
   "dairy": [
     { "name": "plain yogurt" },
-    { "name": "greek yogurt" },
+    { "name": "greek yogurt", "caloriesPer100g": 133, "caloriesSource": "label" },
     { "name": "yogurt" },
     { "name": "creme fraiche" },
     { "name": "double cream" },
