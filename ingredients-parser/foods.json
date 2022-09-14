@@ -47,6 +47,7 @@
     { "name": "penne" },
     { "name": "rigatoni" },
     { "name": "capellini" },
+    { "name": "tortelloni", "caloriesPer100g": 191, "caloriesSource": "label" },
     { "name": "ziti" }
   ],
   "pastry": [
@@ -56,7 +57,7 @@
   ],
   "fruit": [
     { "name": "lime juice" },
-    { "name": "lime" },
+    { "name": "lime", "_misc": "1 lime is €0.45" },
     { "name": "juice of half a lemon", "caloriesPer100g": 22, "weightOfOneItem": 34 },
     { "name": "preserved lemon peel", "caloriesPer100g": 300 },
     { "name": "lemon juice", "caloriesPer100g": 22 },
@@ -70,7 +71,7 @@
   ],
   "vegetables": [
     { "name": "cherry tomatoes" },
-    { "name": "sundried tomatoes" },
+    { "name": "sundried tomatoes", "caloriesPer100g": 163, "caloriesSource": "label" },
     { "name": "tomato puree", "caloriesPer100g": 84, "caloriesSource": "label" },
     { "name": "chopped tomatoes" },
     { "name": "tomato", "caloriesPer100g": 18, "weightOfOneItem": 82 },
@@ -80,7 +81,7 @@
     { "name": "aubergine", "caloriesPer100g": 25, "weightOfOneItem": 400 },
     { "name": "courgette" },
     { "name": "asparagus" },
-    { "name": "chilli" },
+    { "name": "chilli", "_misc": "pack of 3 chillis is €0.99" },
     { "name": "red pepper" },
     { "name": "green pepper" },
     { "name": "yellow pepper" },
@@ -91,7 +92,7 @@
     { "name": "bean sprout" },
     { "name": "sweetcorn" },
     { "name": "frozen peas" },
-    { "name": "cauliflower" },
+    { "name": "cauliflower", "_misc": "1 cauliflower is €1.29" },
     { "name": "potato" },
     { "name": "scallions" },
     { "name": "spring onions" },
@@ -112,7 +113,8 @@
     { "name": "crab cake" },
     { "name": "tinned tuna" },
     { "name": "tuna" },
-    { "name": "steak" },
+    { "name": "fillet steak", "caloriesPer100g": 155, "weightOfOneItem": 165 },
+    { "name": "striploin steak", "caloriesPer100g": 201, "weightOfOneItem": 227 },
     { "name": "salami" },
     { "name": "pepperoni" },
     { "name": "parma ham", "caloriesPer100g": 145, "weightOfOneItem": 14, "specificUnits": [ "slice", "slices" ] },
@@ -125,6 +127,7 @@
     { "name": "anchovy fillets" },
     { "name": "sea bass" },
     { "name": "hake" },
+    { "name": "salmon", "caloriesPer100g": 260, "weightOfOneItem": 204, "costPer100g": 1.87, "caloriesSource": "label" },
     { "name": "anchovies" }
   ],
   "herbs": [
@@ -180,14 +183,16 @@
     { "name": "taleggio", "caloriesPer100g": 247, "caloriesSource": "label" },
     { "name": "comte", "caloriesPer100g": 418, "costPer100g": 4.4, "caloriesSource": "label" },
     { "name": "gruyere" },
-    { "name": "mozarella" },
+    { "name": "mozarella", "caloriesPer100g": 226, "caloriesSource": "label" },
     { "name": "scamorza", "caloriesPer100g": 338, "caloriesSource": "label" }
   ],
   "bread": [
     { "name": "breadcrumbs" },
     { "name": "ciabatta" },
     { "name": "naan bread" },
-    { "name": "bread" }
+    { "name": "bread" },
+    { "name": "flatbread", "caloriesPer100g": 363, "weightOfOneItem": 100, "caloriesSource": "label" },
+    { "name": "tortilla", "_misc": "1 pack of 8 is €3.29" }
   ],
   "riceAndNoodles": [
     { "name": "udon noodles" },
