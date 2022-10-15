@@ -108,7 +108,7 @@
   ],
   "meat": [
     { "name": "pancetta" },
-    { "name": "bacon", "caloriesPer100g": 541 },
+    { "name": "bacon", "caloriesPer100g": 190, "weightOfOneItem": 40, "specificUnits": [ "slice", "slices" ] },
     { "name": "lamb" },
     { "name": "crab cake" },
     { "name": "tinned tuna" },
