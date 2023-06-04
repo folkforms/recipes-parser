@@ -1,0 +1,11 @@
+{
+  "whatever": [
+    { "name": "sugar", "caloriesPer100g": 387, "costPer100g": 0.159 },
+    { "name": "egg", "caloriesPer100g": 175, "weightOfOneItem": 48, "costPer100g": 0.69 },
+    { "name": "tomato", "caloriesPer100g": 18, "weightOfOneItem": 82, "costPer100g": 0.57 },
+    { "name": "flour", "caloriesPer100g": 364, "costPer100g": 0.127 },
+    { "name": "olive oil", "caloriesPer100g": 900, "costPer100g": 0.429 },
+    { "name": "cayenne pepper", "caloriesPer100g": 318, "costPer100g": 15.4 },
+    { "name": "tomato puree", "caloriesPer100g": 84, "costPer100g": 0.725 }
+  ]
+}

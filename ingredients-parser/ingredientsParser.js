@@ -1,8 +1,9 @@
 const foodUtils = require("./foodUtils");
 const calculateCalories = require("./calculateCalories");
+const calculateCost = require("./calculateCost");
 const genericConversions = require("./genericConversions");
 
-const parseIngredients = obj => {
+const parseIngredients = (obj, foodsOverrideForTesting) => {
   if(!obj.ingredients) { return obj; }
   obj.ingredientsParsed = [];
   obj.ingredients.forEach(item => {
@@ -17,7 +18,7 @@ const parseIngredients = obj => {
       item = item.substring(2);
     }
 
-    const foodNames = foodUtils.listNames();
+    const foodNames = foodUtils.listNames(foodsOverrideForTesting);
 
     let hasFoodDotJsonEntry = false;
     let hasUnit = false;
@@ -81,7 +82,7 @@ const parseIngredients = obj => {
         // Convert count and type from natural language "0.5 tsp" to standard term "2.5 g"
         const genericUnits = genericConversions.map(c => c.unit);
         if(parsedIngredient.count) {
-          const data = foodUtils.getData(parsedIngredient);
+          const data = foodUtils.getData(parsedIngredient, foodsOverrideForTesting);
           if(parsedIngredient.unit === null) {
             if(data && data.weightOfOneItem) {
               parsedIngredient.unit = "g";
@@ -121,10 +122,11 @@ const parseIngredients = obj => {
     }
   });
   if(obj.metaData.serves) {
-    obj.calories = calculateCalories(obj.ingredientsParsed, obj);
+    obj.calories = calculateCalories(obj.ingredientsParsed, obj, foodsOverrideForTesting);
     if(typeof obj.calories === "number") {
       obj.caloriesPerServing = obj.calories / obj.metaData.serves;
     }
+    obj.cost = calculateCost(obj.ingredientsParsed, obj, foodsOverrideForTesting);
   }
   return obj;
 }

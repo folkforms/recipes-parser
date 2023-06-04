@@ -5,8 +5,9 @@
     "tags": [ "tag1", "tag2" ],
     "shoppingList": [ "item 1", "item 2" ],
     "from": "https://www.google.com",
-    "serves": "2",
-    "time": "1 hour"
+    "serves": 2,
+    "time": "1 hour",
+    "convertedTimeMinutes": 60
   },
   "ingredients": [
     "1 kg sugar",

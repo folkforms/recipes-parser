@@ -81,7 +81,7 @@
     { "name": "aubergine", "caloriesPer100g": 25, "weightOfOneItem": 400 },
     { "name": "courgette" },
     { "name": "asparagus" },
-    { "name": "chilli", "_misc": "pack of 3 chillis is €0.99" },
+    { "name": "chilli" },
     { "name": "red pepper" },
     { "name": "green pepper" },
     { "name": "yellow pepper" },
@@ -192,7 +192,7 @@
     { "name": "naan bread" },
     { "name": "bread" },
     { "name": "flatbread", "caloriesPer100g": 363, "weightOfOneItem": 100, "caloriesSource": "label" },
-    { "name": "tortilla", "_misc": "1 pack of 8 is €3.29" }
+    { "name": "tortilla" }
   ],
   "riceAndNoodles": [
     { "name": "udon noodles" },

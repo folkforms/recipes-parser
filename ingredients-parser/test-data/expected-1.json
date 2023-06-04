@@ -18,16 +18,17 @@
     "1/2 Tbsp tomato puree"
   ],
   "ingredientsParsed": [
-    { "count": "1000", "unit": "g", "name": "sugar" },
-    { "count": "240", "unit": "g", "name": "egg" },
-    { "count": "164", "unit": "g", "name": "tomato" },
-    { "count": "500", "unit": "g", "name": "flour" },
-    { "count": "100", "unit": "g", "name": "olive oil" },
-    { "count": "2.5", "unit": "g", "name": "cayenne pepper" },
-    { "count": "7.5", "unit": "g", "name": "tomato puree" }
+    { "count": "1000", "unit": "g", "name": "sugar", "calories": 3870 },
+    { "count": "240", "unit": "g", "name": "egg", "calories": 420 },
+    { "count": "164", "unit": "g", "name": "tomato", "calories": 29.52 },
+    { "count": "500", "unit": "g", "name": "flour", "calories": 1820 },
+    { "count": "100", "unit": "g", "name": "olive oil", "calories": 900 },
+    { "count": "2.5", "unit": "g", "name": "cayenne pepper", "calories": 7.95 },
+    { "count": "7.5", "unit": "g", "name": "tomato puree", "calories": 6.3 }
   ],
   "calories": 7053.77,
   "caloriesPerServing": 3526.885,
+  "cost": 5.68,
   "directions": [
     "Mix everything",
     "Put it in a cake tin",
